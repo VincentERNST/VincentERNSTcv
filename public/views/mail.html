@@ -1,0 +1,58 @@
+<md-dialog><br>
+           <form name ="form" role="form" novalidate ng-submit='sendMail()'>
+             
+
+            <div layout-align="center center" style="width:80%;margin-left:2%;padding:2%;">
+                 <label class="sr-only" for="item-email">Price in xxx.xxx</label>
+                 <input
+                   class="form-control"
+                   ng-model="mail.email"
+                   id="item-email"
+                   name="item-email"
+                   placeholder="votre email"
+               required
+               ng-pattern="/.+@+.+\.+./i"><md-tooltip  md-direction="left">Votre addresse mail type : ernst.vincent@live.fr</md-tooltip></input>
+            </div>
+            <br>
+             <div layout-align="center center" style="width:80%;margin-left:2%;padding:2%;">
+                  <label class="sr-only" for="item-subject">Your item</label>
+                  <input
+                    class="form-control"
+                   ng-model="mail.subject"
+                   id="item-subject"
+                   name="item-subject"
+                   autocomplete="off"
+                   placeholder="sujet" 
+           required
+           ng-pattern="/[a-z]/i"><md-tooltip  md-direction="left">Sujet du mail</md-tooltip></input>
+              </div>
+
+
+        <textarea   class="form-control" rows="5" cols="50" maxlength ="150"
+                    style="width:80%;margin-left:2%;padding:2%;"
+                    ng-model="mail.body"
+                    autocomplete="off"
+                    id="item-body"
+                    name="item-body"
+                    placeholder="Corps du mail"
+                    >                                         
+        </textarea>  
+        
+
+<md-tooltip  md-direction="right">Remplire le mail svp</md-tooltip>
+
+
+             <div layout-align="center center" style="width:90%;margin-bottom:2%;padding:2%;">           
+            <button
+              class="btn btn-primary pull-right"
+              type="submit"
+              ng-disabled="form.$invalid">Envoyer</button>
+               </div>
+
+              <!--div class="status">
+              {{ status }}
+            </div-->
+
+
+</form>
+</md-dialog>  

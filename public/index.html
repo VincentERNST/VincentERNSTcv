@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+	<!-- titre de l'onglet -->
+	<title>Vincent ERNST</title>
+   <meta name="description" content=""/>
+   <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
+   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="src/libs/bootstrap/dist/css/bootstrap.min.css" />
+  <!--link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" /-->
+  <link rel="stylesheet" href="src/libs/angular-material/angular-material.css" />	
+  <!-- custom styles -->  
+	<link rel="stylesheet" type='text/css' href="src/css/style.css"/> 
+  <link rel="stylesheet" type='text/css' href="src/css/main.css"/>
+</head>
+
+<body ng-app="sampleApp" ng-controller="MainController">
+
+
+
+<!--L'en-tête/-->
+  <div class="head"/>
+  <p class="flotte">
+  </p>
+    <p class="illustre">
+      <!--img alt="" src="images/VincentERNST.jpg" width="100" height="130" /-->
+      Je m'appel Vincent ERNST. 29 ans. <br>Je suis passé par l'industrie avionique en tant qu'ingénieur logiciel, l'associatif comme coatch sportif handisport et enfin la gestion ITSM aujourd'hui.<br>
+  Je recherche à présent une expérience en dev Web Front et/ou Back end.
+  <!--img src="images/ciel.jpeg" class="ls-bg ls-preloaded" -->
+  </p>
+  </div>
+
+
+
+
+  <!-- CONTAINER -->
+
+<div class="container">
+
+  <!-- HEADER MENUE -->
+  <br>
+  <div class="testw3"
+    ng-switch on="tabselect">
+      <!--div class="animate-switch" ng-switch-default ng-bind-html="shortdesc">
+      </div-->
+      <p style="color : white;padding :4px" ng-switch-default ng-bind-html="shortdesc">
+      </p>      
+  </div>
+
+<br>
+  <md-content loading="loading">
+    <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+
+ <!--md-tab md-on-select="myClickEvent()">
+      <md-tab-label>
+      <div>Compétences</div>
+       <md-icon md-svg-icon="images/svg/ic_desktop_windows_black_24px.svg"></md-icon>
+      </md-tab-label>
+        <md-tab-body class="md-padding">
+          <div ui-view="comps" class="ok"></div>
+        </md-tab-body>
+      </md-tab>
+
+
+      <md-tab md-on-select="myClickEvent()">
+      <md-tab-label>
+      <div>Formations</div>
+       <md-icon md-svg-icon="images/svg/ic_attach_money_black_24px.svg"></md-icon>
+       <md-icon md-svg-icon="images/svg/ic_school_black_24px.svg"></md-icon>
+      </md-tab-label>
+        <md-tab-body class="md-padding">     
+        <div ui-view="formations" class="ok"></div>
+        </md-tab-body>
+      </md-tab>
+
+      <md-tab md-on-select="myClickEvent()">
+      <md-tab-label>
+      <div>Expériences</div>
+       <md-icon md-svg-icon="images/svg/ic_airplanemode_active_black_24px.svg"></md-icon>
+      </md-tab-label>
+        <md-tab-body class="md-padding">
+        <div ui-view="experiences" class="ok"></div>
+        </md-tab-body>
+      </md-tab>
+
+      <md-tab md-on-select="myClickEvent()">
+      <md-tab-label>
+      <div>Hobbies</div>
+      <md-icon md-svg-icon="images/svg/ic_pool_black_24px.svg"></md-icon>
+      <md-icon md-svg-icon="images/svg/ic_directions_bike_black_24px.svg"></md-icon>
+      <md-icon md-svg-icon="images/svg/ic_directions_run_black_24px.svg"></md-icon> 
+      </md-tab-label>
+        <md-tab-body class="md-padding">
+        <div ui-view="hobbies" class="ok"></div>
+        </md-tab-body>
+      </md-tab>
+
+      <md-tab md-on-select="myClickEvent()">
+      <md-tab-label>
+      <div>Interview</div>
+            <md-icon md-svg-icon="images/svg/ic_contact_mail_black_24px.svg"></md-icon>
+      </md-tab-label>
+        <md-tab-body class="md-padding">
+        <div ui-view="interview" class="ok"></div>
+        </md-tab-body>
+        
+      </md-tab-->
+
+   <!--md-tab md-on-select="myClickEvent()" ng-repeat="tab in ::tabs">
+      <md-tab-label>
+      <div>{{::tab.title}}</div>
+       <md-icon ng-repeat="icon in tab.icons" md-svg-icon="{{icon}}"></md-icon>
+      </md-tab-label>
+      <md-tab-body class="md-padding">
+      <div ui-view="{{::tab.view}}" class="ok"></div>
+      </md-tab-body>
+   </md-tab--> 
+
+     <md-tab md-on-select="myClickEvent()" ng-repeat="tab in ::tabs track by $index">
+      <md-tab-label>
+      <div>{{::tab.title}}</div>
+       <md-icon  ng-repeat="icon in ::tab.icons" md-svg-icon="{{icon}}"></md-icon>
+      </md-tab-label>
+        <md-tab-body class="md-padding">
+        <div ui-view="{{::tab.view}}" class="large"></div>
+        </md-tab-body>
+      </md-tab>
+
+
+    </md-tabs>
+    </md-content>
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	          <!--div ng-view></div-->  
+</div>
+  <!-- Footer -->
+<footer>
+    <div layout="column" layout-align="center center" style="width:100%; height:60px">
+      <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
+        Envoyer un mail
+      </md-button>
+    </div>
+  <p style="color : white;">Contactez moi par mail : ernst.vincent@live.fr</p>
+</footer>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+
+  <!-- JS -->
+  <script src="src/libs/angular/angular.min.js"></script>
+  <script src="src/libs/angular-route/angular-route.min.js"></script>
+  <script src="src/libs/angular-animate/angular-animate.js"></script>
+  <script src="src/libs/jquery/dist/jquery.js"></script>
+  <script src="src/libs/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="src/libs/angular-aria/angular-aria.js"></script>
+  <script src="src/libs/angular-cookies/angular-cookies.js"></script>
+  <script src="src/libs/angular-messages/angular-messages.js"></script>
+  <script src="src/libs/angular-resource/angular-resource.js"></script>
+  <script src="src/libs/angular-route/angular-route.js"></script>
+  <script src="src/libs/angular-sanitize/angular-sanitize.js"></script>
+  <script src="src/libs/angular-touch/angular-touch.js"></script>
+  <script src="src/libs/angular-material/angular-material.js"></script>  
+  <!--script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script-->
+
+  
+   <!--script src="src/libs/angular/angular.js"></script--> 
+  <!--script src="/bower_components/angular-animate/angular-animate.js">KO</script--> 
+
+  <!-- ANGULAR CUSTOM -->
+  <script src="src/js/controllers/CompCtrl.js"></script>
+  <script src="src/js/controllers/ExperienceCtrl.js"></script>
+  <script src="src/js/controllers/FormationCtrl.js"></script>  
+  <script src="src/js/controllers/HobbieCtrl.js"></script>
+  <script src="src/js/controllers/InterviewCtrl.js"></script> 
+  <script src="src/js/controllers/MainCtrl.js"></script>  
+  <script src="src/js/services/InterviewService.js"></script>  
+  <script src="src/js/appRoutes.js"></script>
+  <script src="src/js/app.js"></script>
+  <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="http://spin.js.org/spin.min.js"></script>
+  <script type="text/javascript" src="src/js/moveobj.js"> </script>
+  
+
+
+
+
+  <script type="text/javascript">
+//Step 1: Define unique variable names depending on number of flying images (ie:3):
+var flyimage1, flyimage2, flyimage3
+function pagestart(){
+//Step 2: Using the same variable names as 1), add or delete more of the below lines (60=width, height=80 of image):
+ flyimage1=new Chip("flyimage1",47,68);
+ flyimage2=new Chip("flyimage2",47,68);
+ flyimage3=new Chip("flyimage3",47,68);
+//Step 3: Using the same variable names as 1), add or delete more of the below lines:
+movechip("flyimage1");
+movechip("flyimage2");
+movechip("flyimage3");
+}
+if (window.addEventListener)
+window.addEventListener("load", pagestart, false)
+else if (window.attachEvent)
+window.attachEvent("onload", pagestart)
+else if (document.getElementById)
+window.onload=pagestart
+</script>
+
+
+
+
+</body>
+</html>

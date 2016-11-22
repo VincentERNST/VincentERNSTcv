@@ -1,0 +1,159 @@
+ html,body{
+ 	word-wrap: break-word;
+ }
+html {
+    overflow: hidden;
+    height: 100%;
+    max-width: 100%;
+
+}
+
+body {
+	background-image : url("http://localhost:8080/images/bck5.jpg");
+	padding-top:10px; 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+        max-width: 100%;
+    overflow-x: hidden;
+}
+
+md-backdrop.md-opaque.md-default-theme,
+.md-dialog-container {
+  position:fixed;
+}
+
+
+div.head{
+  width:100%;
+  height:200px;
+  background-image : url("http://localhost:8080/images/ciel7.jpeg");
+  background-repeat: no-repeat;
+  background-size: contain;
+ background-position: center top;
+}
+
+footer {
+	text-align: center;
+	font-size: 150%;
+}
+md-tooltip {
+	position:fixed;
+}
+md-tooltip .md-content {
+    height: auto;
+}
+
+/* visited link */
+a:visited {
+    color: purple;
+}
+
+table.ng-enter,table.ng-enter-active{
+    animation: pop;
+    animation-duration: 0.5s;
+    animation-iteration-count: 3; 
+}
+@keyframes pop {
+    from {  opacity :1;}
+    to {  opacity :0.3;}
+}
+
+
+p.answering{
+color: lime;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}
+
+
+
+
+
+
+
+p.answer{
+  font-family : 'Aladdin';
+  font-weight: bold;
+  color : blue;
+  font-size : 200%;
+  margin: 10px 0 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 90%;
+  max-height: 250px;
+
+}
+
+
+p.answer.ng-enter,
+p.answer.ng-enter.ng-enter-active {
+  animation: type2 3s steps(60, end);
+  -webkit-animation: type2 3s steps(60, end);
+  -o-animation: type2 3s steps(60, end);
+  -moz-animation: type2 3s steps(60, end);
+}
+
+
+p.answer.ng-leave.ng-leave-active {
+	animation:example;
+    animation-duration: 1s;
+}
+p.answer.ng-leave{
+	animation:example;
+    animation-duration: 1s;
+}
+@keyframes example {
+    from {  opacity :0.7;}
+    to {  opacity :0;}
+}
+
+
+
+p.answer a{
+  color: lime;
+  text-decoration: none;
+}
+
+span.answer{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+@-moz-keyframe type2{
+  0%{width: 0;}
+  50%{width: 50;}
+  100%{ width: 100; } 	
+}
+@-webkit-keyframe type2{
+  0%{width: 0;}
+  50%{width: 50;}
+  100%{ width: 100; } 	
+}
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 50;}
+  100%{ width: 100; } 
+} 
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+@keyframes emptyanim {}
+
+div.geniusImg{
+	position:absolute;
+ 	left: -400px;
+ 	margin-right: 40%;
+    width:47;
+    height:50;
+}
+
+
+md-toast.md-success-toast-theme {
+    background-color: green;
+}

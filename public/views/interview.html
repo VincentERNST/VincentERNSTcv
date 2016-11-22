@@ -1,0 +1,54 @@
+<h1 class="md-display">Interview</h1><br>
+  <form id="question">
+    <textarea           class="form-control" rows="5" cols="50" maxlength ="150"
+                        ng-model="genius.question"
+                        autocomplete="off"
+                        id="item-name"
+                        name="item-name"
+                        placeholder="Votre Question">                  
+    </textarea>  
+    <md-tooltip>Tapez une question<br>Cliquer sur le génie</md-tooltip>
+  </form> 
+  
+<br><br>
+
+  <DIV ID="flyimage1" class = 'geniusImg'>
+   <IMG ng-src="{{genius.image}}" BORDER=0 ng-click="affichageReponse || addEnigma()" style="outline:none;"/>
+  </DIV>
+
+<div style = "display:block;height:250px; width:100%;overflow:hidden">  
+<p class="answer" id="response" ng-if="affichageReponse" ng-bind-html="genius.geniusAnswer"></p>  
+</div>
+   
+ 
+<table class="table table-condensed" style=" top:50%;" ng-if='userEnigmas.length>0'>
+
+<thead>
+<tr>
+<th>Question</th>
+<th>Réponse</th>
+<th>&nbsp;Date</th>
+<th>Action</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+
+
+
+<tbody>
+<tr ng-repeat ="enigma in userEnigmas">
+<td><div ng-if='!mod.modifying[$index]'>{{enigma.question}}</div><input maxlength="150" ng-model="post.question" ng-if='mod.modifying[$index]' ng-init ="{{enigma.question}}"></input></td>
+<td ng-bind-html="enigma.answer"></td>
+<td>{{enigma.create_date | date:'yyyy/MM/dd  HH:mm:ss'}}</td>
+<td><button ng-click="remove(enigma._id)">Supprimer</button></td>
+<td>
+<button ng-click="edit(enigma._id);mod.modifying[$index]=true;" ng-if='!mod.modifying[$index]'>Modifier</button>
+<button ng-click="update(enigma._id);mod.modifying[$index]=false;" ng-if='mod.modifying[$index]'>Enregistrer</button>
+</td>
+</tr>
+</tbody>
+
+
+</table>      
+
+</div>

@@ -1,0 +1,290 @@
+u{
+text-decoration:underline;
+}
+h1.comp2{
+font-size: 18px;
+color:#13BBEC;
+font-weight: bold;
+}
+h1.md-display{
+font-size: 24px;
+color:#11A0EC;
+font-weight: bold;
+}
+td.cel11{
+color:#11A0EC;
+font-weight: bold;
+}
+td.celexperience11{
+color:#11A0EC;
+font-weight: bold;
+}
+table {
+        border-collapse: separate;
+        border-spacing: 5px 8px; /* Nombre de pixels d'espace horizontal (5px), vertical (8px) */
+}
+hr {
+background:red;
+      height: 2px; 
+      color: #11A0EC; 
+      background-color: #13BBEC; 
+      width: 33%; 
+      border: none;
+
+}
+md-icon {
+  margin: 20px;
+  margin-top: 0;
+  width: 24px;
+  height: 24px;
+}
+md-tab > md-icon {
+  margin-bottom: 5px;
+}
+md-pagination-wrapper, md-tabs-canvas {
+  height: 72px;
+}
+
+
+
+/*Animation :  Ecrire plus gros */
+.css-class-add, .css-class-remove {
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.css-class,
+.css-class-add.css-class-add-active {
+  color: red;
+  font-size:3em;
+}
+
+.css-class-remove.css-class-remove-active {
+  font-size:1.0em;
+  color: black;
+}
+
+
+
+
+
+
+@keyframes myBack {
+  from {
+      height: 100px;
+  } to {
+      height: 0;
+  }
+}
+
+@keyframes myChange {
+  from {
+      height: 0;
+  } to {
+      height: 100px;
+  }
+}
+@keyframes red-to-blue {
+  from { background:red; }
+  to { background:blue; }
+}
+
+@-webkit-keyframes red-to-blue {
+  from { background:red; }
+  to { background:blue; }
+}
+.my-special-animation.ng-enter {
+  -webkit-animation:0.5s red-to-blue;
+  animation:0.5s red-to-blue;
+}
+
+div.blablabox {
+  transition: all linear 0.5s;
+  background-color: lightblue;
+  border-radius: 0px 15px 50px 30px;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+div.blablabox.ng-hide {
+  transition: all linear 0.5s;
+  opacity :0;
+}
+div.blablabox.ng-show {
+  transition: all linear 0.5s;
+  opacity : 100%;
+}
+div.blablaboxTest.ng-show{
+  transition: all linear 0.5s;
+  animation: 0.5s myChange;
+}
+div.bgimage {
+  background: url('http://angularjs.org/img/AngularJS-large.png') 0 0 no-repeat transparent;
+  width: 383px;
+  height: 108px;
+}
+
+
+/*.animate-enter, 
+.animate-leave
+{ 
+    -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+} 
+ 
+.animate-enter {
+    left: 100%;
+}
+.animate-enter.animate-enter-active {
+    left: 0;
+}
+ 
+.animate-leave {
+    left: 0;
+}*/
+div.testw3 {
+   background: rgba(65, 225, 255, 0.6);
+  border-radius: 0px 15px 50px 30px;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+    -webkit-animation: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+    animation: example;
+    animation-duration: 0.5s;
+    animation-iteration-count: 3; 
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from {  opacity :1;}
+    to {  opacity :0.5;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    from {  opacity :1;}
+    to {  opacity :0.5;}
+}
+div.testw3.ng-enter,div.testw3.ng-move,
+div.testw3.ng-enter.ng-enter-active{
+    -webkit-animation: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+    animation: example;
+    animation-duration: 0.5s;
+    animation-iteration-count: 3; 
+}
+div.testw3.ng-leave,
+div.testw3.ng-leave.ng-leave-active{
+    -webkit-animation: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+    animation: example;
+    animation-duration: 0.5s;
+    animation-iteration-count: 3; 
+}
+
+
+
+
+.animate-switch-container {
+  position:relative;
+  background:white;
+  border:1px solid black;
+  height:40px;
+  overflow:hidden;
+}
+
+.animate-switch {
+  padding:10px;
+}
+
+.animate-switch.ng-animate {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.animate-switch.ng-leave.ng-leave-active,
+.animate-switch.ng-enter {
+  top:-50px;
+  opacity:0.2;
+  font-size:0.5em;
+}
+.animate-switch.ng-leave,
+.animate-switch.ng-enter.ng-enter-active {
+  top:0;
+  opacity:1;
+  font-size:1.0em;
+}
+
+
+/*  */
+@font-face {
+    font-family: 'Aladdin';
+    src: url('Aladdin.ttf');
+}
+
+
+
+/* Image Hobbies */
+ul.illustreimg {
+  position:relative;
+  width:50%; 
+  margin-left:30%;
+}
+.imgG {
+float:left;
+}
+
+/*HEADER*/
+p.illustre {
+ /*  position:relative;*/ 
+  text-align: center;
+ /*   width:20%;
+      padding-left:20%;   */
+
+
+    /*max-width: 1500px; */
+      max-height: 150px;
+    padding-top:40px; 
+  
+    margin-left:25%;  
+    margin-right:25%; 
+   font-size:140%;
+   height:150px;
+ }
+/*p.illustre  img {position:absolute; left:10px;top :10px;}*/
+
+.flotte {
+float:left;
+margin-left:10px;
+margin-top:10px;
+}
+
+
+
+/* Image Head */
+.ls-bg{width:100%;height:auto}
+
+/*FOOTER*/
+#footer {
+    position: absolute;
+    bottom: 0;
+        }
+div.large{ 
+  min-height: 1100px;
+  padding :5%;
+}
+
+
